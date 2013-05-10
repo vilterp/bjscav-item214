@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 
+  fountain_id: 
+  convenience: 
+  quality: 
+  atmosphere: 
+  review_text: MyText
+  overall_rating: 
+
+two:
+  user_id: 
+  fountain_id: 
+  convenience: 
+  quality: 
+  atmosphere: 
+  review_text: MyText
+  overall_rating: 

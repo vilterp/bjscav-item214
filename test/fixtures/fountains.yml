@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  building_id: 
+  floor: 
+  loc_info: MyString
+
+two:
+  building_id: 
+  floor: 
+  loc_info: MyString
