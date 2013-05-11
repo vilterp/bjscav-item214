@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :provider, :uid
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.find_by_email(auth.info.email)
     # TODO: "The method above simply tries to find an existing user by e-mail or
     # create one with a random password otherwise. Note that this is simply an example.
     # Your application must take precautions if using User.find_by_email to link an existing
