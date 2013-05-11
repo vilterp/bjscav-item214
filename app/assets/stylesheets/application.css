@@ -11,3 +11,37 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+    background: url("/assets/nye.jpeg");
+    background-repeat: repeat;
+    color: red;
+}
+
+a {
+    color: red;
+}
+
+h1 {
+    background: white;
+}
+
+h2 {
+    background: white;
+}
+
+li {
+    background: white;
+}
+
+p {
+    background: white;
+}
+
+a {
+    background: white;
+}
+
+footer {
+    background: white;
+}
