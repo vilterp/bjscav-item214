@@ -5,8 +5,10 @@ BjscavItem214::Application.routes.draw do
   match 'area/:area_name' => "buildings#area"
   match 'building/:building_name' => "buildings#building"
 
-  match 'fountains/:fountain_id' => "fountains#show"
-  match 'fountains/add_rating' => "fountains#add_rating"
+  match 'fountains/show/:fountain_id' => "fountains#show"
+  match 'fountains/save_rating' => "fountains#save_rating"
+  match 'fountains/add_new' => "fountains#add_new"
+  match 'fountains/save_new' => "fountains#save_new"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

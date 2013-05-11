@@ -1,0 +1,33 @@
+<h2>Fountain: <%= @fountain.building.human_readable_name %>, Floor <%= @fountain.floor %>, <%= @fountain.loc_info %></h2>
+
+<% if @fountain.reviews.empty? %>
+    No reviews! Add one.
+<% else %>
+    <h3>Reviews</h3>
+    <ul>
+        <% @fountain.reviews.each do |review| %>
+            <li><%= review.user.name %> sez atmosphere is <%= review.atmosphere %>,
+                taste is <%= review.taste %>, convenience is <%= review.convenience %>,
+                and overall quality is <%= review.overall_quality %>. Notes:
+                <p><%= review.review_text %></p></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<h3>Add a new review!</h3>
+
+<%= form_for @review, :url => url_for(:action => :save_rating) do |f| %>
+    <input type="hidden" name="review[fountain_id]" value="<%= @fountain.id %>"/>
+    <input type="hidden" name="review[user_id]" value="<%= current_user.id %>"/>
+    <p><%= f.label :convenience %>
+    <%= f.text_field :convenience, :type => :number, :max => 5, :min => 0 %></p>
+    <p><%= f.label :taste %>
+    <%= f.text_field :taste, :type => :number, :max => 5, :min => 0 %></p>
+    <p><%= f.label :atmosphere %>
+    <%= f.text_field :atmosphere, :type => :number, :max => 5, :min => 0 %></p>
+    <p><%= f.label :overall_quality %>
+    <%= f.text_field :overall_quality, :type => :number, :max => 5, :min => 0 %></p>
+    <p><%= f.label :review_text %><br/>
+    <%= f.text_area :review_text %></p>
+    <p><%= f.submit %></p>
+<% end %>

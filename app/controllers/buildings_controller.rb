@@ -5,7 +5,7 @@ class BuildingsController < ApplicationController
   end
 
   def area
-    @area = Area.find_by_slug(params[:area_name])
+    @area = Area.find_by_name(params[:area_name])
   end
 
   def building

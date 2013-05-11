@@ -1,0 +1,14 @@
+<h2>Put in a new fountain</h2>
+
+<%= form_for @fountain, :url => url_for(:action => :save_new) do |f| %>
+    <input type="hidden" name="building_slug" value="<%= @building.slug %>"/>
+    <div>
+        <%= f.label :floor %>
+        <%= f.text_field :floor, :type => :number, :min => -2, :max => 10 %>
+    </div>
+    <div>
+        <%= f.label :loc_info, "Additional location info, if needed" %><br/>
+        <%= f.text_field :loc_info %>
+    </div>
+    <%= f.submit 'Add First Rating >>' %>
+<% end %>

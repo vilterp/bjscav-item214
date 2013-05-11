@@ -1,7 +1,14 @@
 <h2><%= @building.human_readable_name.capitalize %></h2>
 
-<ul>
-    <li>Fountains go here</li>
-</ul>
+<% if @building.fountains.empty? %>
+    No fountains rated in this building yet! Add one below.
+<% else %>
+    <ul>
+        <% @building.fountains.each do |fountain| %>
+            <li><%= link_to("floor #{fountain.floor} #{fountain.loc_info}" , :controller => :fountains, :action => :show, :fountain_id => fountain.id) %></li>
+        <% end %>
+    </ul>
+<% end %>
 
-** new fountain button here **
+<strong><%= link_to("Rate a new fountain >>", :controller => :fountains, :action => :add_new, :building_slug => @building.slug) %></strong>
+

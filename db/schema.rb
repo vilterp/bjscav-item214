@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130511063806) do
+ActiveRecord::Schema.define(:version => 20130511072654) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(:version => 20130511063806) do
     t.integer  "user_id"
     t.integer  "fountain_id"
     t.integer  "convenience"
-    t.integer  "quality"
+    t.integer  "taste"
     t.integer  "atmosphere"
     t.text     "review_text"
-    t.integer  "overall_rating"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "overall_quality"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|
