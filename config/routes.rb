@@ -1,6 +1,12 @@
 BjscavItem214::Application.routes.draw do
 
-  root :to => "home#index"
+  root :to => "buildings#index"
+
+  match 'area/:area_name' => "buildings#area"
+  match 'building/:building_name' => "buildings#building"
+
+  match 'fountains/:fountain_id' => "fountains#show"
+  match 'fountains/add_rating' => "fountains#add_rating"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

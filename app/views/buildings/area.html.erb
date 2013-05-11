@@ -1,0 +1,6 @@
+<h2><%= @area.name.capitalize %></h2>
+
+<%= image_tag("campus-maps/#{@area.name}.gif", :usemap => "##{@area.name}") %>
+
+<!-- jank-tastic -->
+<%= raw @area.map_html %>
